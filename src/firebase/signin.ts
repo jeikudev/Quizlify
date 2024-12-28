@@ -1,8 +1,8 @@
+import { quizlifyFirebaseApp } from "@/config";
 import { User } from "@/types";
-import firebase_app from "../config";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 
-const auth = getAuth(firebase_app);
+const auth = getAuth(quizlifyFirebaseApp);
 
 export default async function signIn({ email, password }: User) {
   let result = null,

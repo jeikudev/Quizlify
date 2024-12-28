@@ -1,4 +1,5 @@
-import { initializeApp, getApps } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -10,7 +11,9 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-let firebase_app =
-  getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const quizlifyFirebaseApp = !getApps().length
+  ? initializeApp(firebaseConfig)
+  : getApp();
+const quizlifyFirebaseAuth = getAuth(quizlifyFirebaseApp);
 
-export default firebase_app;
+export { quizlifyFirebaseApp, quizlifyFirebaseAuth };

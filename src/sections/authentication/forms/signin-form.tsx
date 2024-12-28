@@ -35,7 +35,7 @@ function SignInForm() {
     }
 
     console.log(result);
-    return router.push("/signin");
+    return router.push("/quizlify");
   };
 
   return (

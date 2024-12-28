@@ -60,18 +60,18 @@ export default {
         pulse: {
           "0%": {
             transform: "scale(0.8)",
-            backgroundColor: "#b3d4fc",
-            boxShadow: "0 0 0 0 rgba(178, 212, 252, 0.7)",
+            backgroundColor: "primary",
+            boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.7)",
           },
           "50%": {
             transform: "scale(1.2)",
-            backgroundColor: "#6793fb",
-            boxShadow: "0 0 0 10px rgba(178, 212, 252, 0)",
+            backgroundColor: "primary",
+            boxShadow: "0 0 0 10px rgba(0, 0, 0, 0)",
           },
           "100%": {
             transform: "scale(0.8)",
-            backgroundColor: "#b3d4fc",
-            boxShadow: "0 0 0 0 rgba(178, 212, 252, 0.7)",
+            backgroundColor: "primary",
+            boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.7)",
           },
         },
       },
