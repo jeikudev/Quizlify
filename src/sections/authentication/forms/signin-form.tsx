@@ -14,11 +14,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import signIn from "@/firebase/signin";
-import { useRouter } from "next/navigation";
 
 function SignInForm() {
-  const router = useRouter();
   const form = useForm<User>({
     resolver: zodResolver(userSchema),
     defaultValues: {
@@ -28,14 +25,7 @@ function SignInForm() {
   });
 
   const onSubmit = async (data: User) => {
-    const { result, error } = await signIn(data);
-
-    if (error) {
-      return console.log(error);
-    }
-
-    console.log(result);
-    return router.push("/quizlify");
+    console.log(data);
   };
 
   return (

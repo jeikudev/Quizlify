@@ -14,11 +14,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import signUp from "@/firebase/signup";
-import { useRouter } from "next/navigation";
 
 function SignUpForm() {
-  const router = useRouter();
   const form = useForm<User>({
     resolver: zodResolver(userSchema),
     defaultValues: {
@@ -28,14 +25,7 @@ function SignUpForm() {
   });
 
   const onSubmit = async (data: User) => {
-    const { result, error } = await signUp(data);
-
-    if (error) {
-      return console.log(error);
-    }
-
-    console.log(result);
-    return router.push("/signin");
+    console.log(data);
   };
 
   return (
